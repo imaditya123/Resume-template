@@ -15,12 +15,19 @@ This repository contains a clean and modern resume template, designed to help yo
    git clone https://github.com/imaditya123/Resume-template.git
    ```
 
-2. Open `index.html` in your browser to preview the template.
+## Generating a PDF (via Overleaf)
 
-## Usage
-- Open the HTML file in any code editor.
-- Customize the content (e.g., name, contact info, experience).
-- Modify the CSS if you want to change colors, fonts, or layout styles.
+If you want to generate a professional PDF version of your résumé using LaTeX, you can use the linked Overleaf project.
 
-## Contribution
-Feel free to fork this repository and make contributions through pull requests.
+### Steps:
+
+- Open your Overleaf project:
+https://www.overleaf.com/
+
+- Upload or edit the .tex résumé template inside Overleaf.
+
+- Click Recompile to generate the PDF.
+
+- Download the PDF directly from Overleaf using the Download PDF button.
+
+Note: Overleaf compiles LaTeX files, so if your HTML résumé is different, you may need to manually migrate the content into the LaTeX template provided in the project.
