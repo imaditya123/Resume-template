@@ -226,9 +226,9 @@
   \resumeSubItem{Frontend:}
   {React, Angular, HTML, CSS, Flutter, nextjs,Jest, React Testing Library}
   \resumeSubItem{Infra/Cloud \& DevOps:}
-    {AWS Cloud, Docker, Kubernetes, Jenkins, git, Linux/Unix}
+    {AWS Cloud, Docker, Kubernetes, Jenkins, git, Linux/Unix, }
    \resumeSubItem{Core Strengths: }
-    {Distributed Systems, System Design, Accessibility (WCAG), Debugging, Maven, XML, Algorithms,GraphQL,JUnit5, Mockito, JMeter, Contract Testing, SOAP, PL/SQL}
+    {Distributed Systems, System Design, Accessibility (WCAG), Shell scripting, Debugging,XML, Algorithms,GraphQL,JUnit5, Mockito, JMeter, SOAP,MongoDB, Elasticsearch}
   \resumeSubItem{Other Skills:}
     { MongoDB, PostgreSQL,Hibernate,JPA,XML,Pytorch, Hugging Face, Tensorflow, }
  \resumeHeadingSkillEnd
