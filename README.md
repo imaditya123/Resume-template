@@ -1,33 +1,319 @@
+\documentclass[a4paper,11pt]{article}
 
-# Resume Template
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
 
-This repository contains a clean and modern resume template, designed to help you create a professional resume quickly. The template is built using HTML, CSS, and optionally JavaScript, ensuring a responsive and polished design.
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
 
-## Features
-- **Simple and elegant design**.
-- **Responsive layout** to ensure it looks great on any device.
-- **Customizable sections** for your personal information, work experience, skills, education, and more.
-- **Easy to use**: Just fill in your details, and you're good to go!
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/imaditya123/Resume-template.git
-   ```
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+}
 
-## Generating a PDF (via Overleaf)
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
 
-If you want to generate a professional PDF version of your résumé using LaTeX, you can use the linked Overleaf project.
+% URL style
+\urlstyle{same}
 
-### Steps:
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-- Open your Overleaf project:
-https://www.overleaf.com/
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
-- Upload or edit the .tex résumé template inside Overleaf.
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
 
-- Click Recompile to generate the PDF.
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
 
-- Download the PDF directly from Overleaf using the Download PDF button.
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{#4} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
 
-Note: Overleaf compiles LaTeX files, so if your HTML résumé is different, you may need to manually migrate the content into the LaTeX template provided in the project.
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Aditya Rathore}}
+\end{center}
+\vspace{-5mm}
+
+\begin{center}
+    \small{
+    \href{tel:+919667841848}{+91-9667841848} | \href{mailto:imadityarathore@gmail.com}{imadityarathore@gmail.com} | 
+    \href{https://www.imaditya.info/}{imaditya.info}
+    }
+\end{center}
+\vspace{-5mm}
+
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/imadityarathore/}{imadityarathore} | 
+    \socialicon{\faGithub} \href{https://github.com/imaditya123}{imaditya123} | 
+    \ieeeicon{\includegraphics[height=1.3em]{hf-logo.png}} \href{https://huggingface.co/imaditya123}{imaditya123} |
+    \socialicon{\faTwitter} \href{https://x.com/imaditya123}{imaditya123}
+    }
+\end{center}
+\vspace{-4mm}
+\begin{center}
+    \small{Bengaluru, Karnataka, India}
+\end{center}
+
+\vspace{-6mm}
+
+% \section{\textbf{Objective}}
+% \vspace{1mm}
+% \small{
+% Seeking a challenging position in [your field] to leverage my expertise in [your key skills]. Aiming to contribute to innovative projects at the intersection of [your interests] and practical problem-solving in fields such as [specific areas of interest].
+% }
+% \vspace{-2mm}
+
+
+
+\section{\textbf{Experience}}
+\vspace{-0.4mm}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {\href{https://www.wellsfargo.com/}{Wells Fargo}}{Bengaluru, India}
+      {Software Engineer}{Aug 2022 - Present}
+      \resumeItemListStart
+\item Developed enterprise-grade full-stack features in Spring Boot, React.
+\item Optimized REST microservices, reducing response time by 20\% and improving throughput by 15\%.
+\item Built Kafka-based distributed pipelines improving reliability by 20\%.
+\item Reduced production incidents by \~15\% via debugging and RCA.
+\item Automated CI/CD workflows reducing deployment time by 25\%.
+\item Improved code quality through reviews, reducing regressions by 10\%.
+\item Followed Agile/Scrum methodologies with sprint planning, story grooming, and daily standups.
+
+      \resumeItemListEnd 
+  \resumeSubheading
+    {\href{https://www.nagarro.com}{Nagarro} }{Remote}
+    {Associate Software Engineer}{Jan 2022 - Jul 2022}
+    \resumeItemListStart
+      \item Developed scalable and efficient applications using Python
+      \item Built web applications with Python framework Flask .
+      \item Optimized code efficiency and maintainability through best practices.
+      \item Gained proficiency in Python frameworks to streamline development.
+      \item Worked with cloud-native patterns; familiar with AWS services.
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\vspace{-2mm}
+\section{\textbf{Skills}}
+\vspace{-0.4mm}
+ \resumeHeadingSkillStart
+  \resumeSubItem{Programming Languages:}
+    {Java, Python, TypeScript, JavaScript, SQL, C++, Golang, Dart}
+  \resumeSubItem{Backend:}
+  {Spring MVC, REST APIs, Microservices, Kafka, Django,Node.js, Express.js}
+  \resumeSubItem{Frontend:}
+  {React, Angular, HTML, CSS, Flutter, nextjs,Jest, React Testing Library}
+  \resumeSubItem{Infra/Cloud \& DevOps:}
+    {AWS Cloud, Docker, Kubernetes, Jenkins, git, Linux/Unix}
+   \resumeSubItem{Core Strengths: }
+    {Distributed Systems, System Design, Accessibility (WCAG), Debugging, Maven, XML, Algorithms,GraphQL,JUnit5, Mockito, JMeter, Contract Testing, SOAP, PL/SQL}
+  \resumeSubItem{Other Skills:}
+    { MongoDB, PostgreSQL,Hibernate,JPA,XML,Pytorch, Hugging Face, Tensorflow, }
+ \resumeHeadingSkillEnd
+
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+% \resumeProject
+%   {Project VIT: [A Command-Line Version Control System]}
+%   {Tools: [Python]}
+%   {Jan 2025}
+%   {{}[\href{https://github.com/imaditya123/VIT}{\textcolor{black}{\faGithub}}]}
+% \resumeItemListStart
+%   \item Developed a command-line tool for basic version control operations.
+%   \item Implemented file version tracking and change management using Python.
+%   \item Created a lightweight version control system for essential tasks.
+%   \item Applied Python programming to analyze and manage file versions effectively within the system.
+% \resumeItemListEnd
+% \resumeProject
+%   {Project Tensor Grad: [Lightweight Tensor Class like Autograd]}
+%   {Tools: [Python,Numpy,Graphviz]}
+%   {Dec 2024}
+%   {{}[\href{https://github.com/imaditya123/tensor_grad}{\textcolor{black}{\faGithub}}]}
+% \resumeItemListStart
+%   \item Developed a tensor class like autograd capabilities for simplified gradient computations using NumPy.
+%   \item Implemented reverse-mode automatic differentiation for efficient backpropagation.
+%   \item Created modular components (Neuron, Layer, MLP) to enable customizable neural network architectures.
+%   \item Applied activation functions like tanh, relu, and exp to enhance the flexibility and functionality of neural networks.
+% \resumeItemListEnd
+
+\resumeProject
+  {Global Payment Orchestration}
+  {Tools: [Java | Spring Boot | Kafka | PostgreSQL | Microservices]}
+  {}
+  {{}[\href{https://github.com/imaditya123/global-payment-orchestration}{\textcolor{black}{\faGithub}}]}
+\resumeItemListStart
+  \item Designed a distributed system for global payment routing, retries, and failure scenarios across providers
+  \item Implemented services for transaction orchestration, validation, audit logging, and event publishing.
+  \item Demonstrates strong knowledge of distributed systems \& event-driven architecture.
+\resumeItemListEnd
+
+\resumeProject
+  {Path-Finding Visualizer}
+  {Tools: [React | Algorithms]}
+  {}
+  {{}[\href{https://github.com/imaditya123/path-finding-visualizer}{\textcolor{black}{\faGithub}}]}
+\resumeItemListStart
+  \item Visualized algorithms like Dijkstra, BFS, DFS, graph traversal, and heuristics.
+  \item Implemented interactive grid rendering with animations and algorithm step simulation.
+  \item Highlights strength in algorithms, data structures, and UI architecture.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\vspace{-3mm}
+\section{\textbf{Certifications}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR{}{
+ \textbf{{\href{https://www.credential.net/1db83ee2-fd4c-4579-a4c2-408980f671c0\#acc.ACIF3Qml}{Google Cloud Digital Leader}}}}{}
+\resumePOR{}{\href{https://learn.deeplearning.ai/accomplishments/86f40f7a-b871-4cf1-9a7a-37308c98e4cb?usp=sharing}{
+\textbf{Advanced Retrieval for AI with Chroma}
+}}{}
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{ABES Engineering College}{Ghaziabad, India}
+{Bachelors in Computer Science}{2018 - 2022}
+% \resumeItemListStart
+% \item CGPA: 8.0
+% \resumeItemListEnd
+
+% \resumeSubheading
+% {CRB Public School}{Mainpuri, India}
+% {Intermediate}{2017}
+% \resumeItemListStart
+% \item Grade: 79\%
+% \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+\end{document}
