@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 % Package imports
 \usepackage{latexsym}
@@ -31,7 +31,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\geometry{left=1.2cm, top=0.7cm, right=1.1cm, bottom=0.8cm}
 \setlength{\footskip}{5pt} % Addressing fancyhdr warning
 
 % Hyperlink setup (moved after fancyhdr to address warning)
@@ -112,7 +112,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
 \newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=0.5mm,itemsep=0.5mm]}
 
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
 \newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
@@ -150,135 +150,117 @@
 
 % Header
 \begin{center}
-    {\Huge\textbf{Aditya Rathore}}
-\end{center}
-\vspace{-5mm}
-
-\begin{center}
-    \small{
-    \href{tel:+919667841848}{+91-9667841848} | \href{mailto:imadityarathore@gmail.com}{imadityarathore@gmail.com} | 
-    \href{https://www.imaditya.info/}{imaditya.info}
-    }
-\end{center}
-\vspace{-5mm}
-
-\begin{center}
-    \small{
-    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/imadityarathore/}{imadityarathore} | 
-    \socialicon{\faGithub} \href{https://github.com/imaditya123}{imaditya123} | 
-    \ieeeicon{\includegraphics[height=1.3em]{hf-logo.png}} \href{https://huggingface.co/imaditya123}{imaditya123} |
-    \socialicon{\faTwitter} \href{https://x.com/imaditya123}{imaditya123}
-    }
-\end{center}
-\vspace{-4mm}
-\begin{center}
-    \small{Bengaluru, Karnataka, India}
+    {\Huge \textbf{Aditya Rathore}} \\[0.5mm]
+    \small
+    Bengaluru, Karnataka, India \;|\;
+    \href{tel:+919667841848}{+91-9667841848} \;|\;
+    \href{mailto:imadityarathore@gmail.com}{imadityarathore@gmail.com} \;|\;
+    \href{https://www.imaditya.info/}{imaditya.info} \\[0.5mm]
+    \socialicon{\faLinkedin}\,\href{https://www.linkedin.com/in/imadityarathore/}{LinkedIn}
+    \;|\;
+    \socialicon{\faGithub}\,\href{https://github.com/imaditya123}{GitHub}
+    \;|\;
+    \ieeeicon{\includegraphics[height=1.1em]{hf-logo.png}}\,\href{https://huggingface.co/imaditya123}{HuggingFace}
+    \;|\;
+    \socialicon{\faTwitter}\,\href{https://x.com/imaditya123}{Twitter}
 \end{center}
 
 \vspace{-6mm}
 
-% \section{\textbf{Objective}}
-% \vspace{1mm}
-% \small{
-% Seeking a challenging position in [your field] to leverage my expertise in [your key skills]. Aiming to contribute to innovative projects at the intersection of [your interests] and practical problem-solving in fields such as [specific areas of interest].
-% }
-% \vspace{-2mm}
-
-
-
+\section{\textbf{Summary}}
+\vspace{1mm}
+\small{
+Backend and data-oriented software engineer with 3+ years of experience designing
+event-driven microservices and data pipelines using Java, Python, Kafka, and SQL.
+Strong focus on data quality, reliability, schema design, and scalable distributed systems.
+Experienced in collaborating with Product, UX, and Data teams to deliver
+end-to-end data products and analytics-ready services.
+}
+\vspace{-3.8mm}
 \section{\textbf{Experience}}
-\vspace{-0.4mm}
+\vspace{-0.9mm}
   \resumeSubHeadingListStart
   \resumeSubheading
       {\href{https://www.wellsfargo.com/}{Wells Fargo}}{Bengaluru, India}
       {Software Engineer}{Aug 2022 - Present}
-      \resumeItemListStart
-\item Developed enterprise-grade full-stack features in Spring Boot, React.
-\item Optimized REST microservices, reducing response time by 20\% and improving throughput by 15\%.
-\item Built Kafka-based distributed pipelines improving reliability by 20\%.
-\item Reduced production incidents by \~15\% via debugging and RCA.
-\item Automated CI/CD workflows reducing deployment time by 25\%.
-\item Improved code quality through reviews, reducing regressions by 10\%.
-\item Followed Agile/Scrum methodologies with sprint planning, story grooming, and daily standups.
-
-      \resumeItemListEnd 
-  \resumeSubheading
+\resumeItemListStart
+\item Designed and developed \textbf{data-centric microservices} using Spring Boot to ingest, transform, and expose data for downstream systems and analytics use cases.
+\item Optimized REST APIs and database queries, reducing response latency by 20\% and improving throughput by 15\%.
+\item Built \textbf{event-driven data pipelines using Kafka} to stream, validate, and synchronize data across distributed services, improving data reliability by 20\%.
+\item Implemented \textbf{data validation, schema enforcement, and audit logging} to ensure traceability, consistency, and compliance across services.
+\item Reduced production incidents by \~15\% through root cause analysis, monitoring, and data-driven debugging.
+\item Automated CI/CD pipelines for backend and data services, reducing deployment time by 25\%.
+\item Contributed to architecture discussions on \textbf{data modeling, storage strategies, and service boundaries} in a microservices ecosystem.
+\item Collaborated closely with Product, UX, and QA teams in Agile/Scrum to deliver end-to-end features and reliable data products.
+\resumeItemListEnd
+\vspace{-0.9mm}
+\resumeSubheading
     {\href{https://www.nagarro.com}{Nagarro} }{Remote}
     {Associate Software Engineer}{Jan 2022 - Jul 2022}
-    \resumeItemListStart
-      \item Developed scalable and efficient applications using Python
-      \item Built web applications with Python framework Flask .
-      \item Optimized code efficiency and maintainability through best practices.
-      \item Gained proficiency in Python frameworks to streamline development.
-      \item Worked with cloud-native patterns; familiar with GCP services.
-    \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\resumeItemListStart
+\item Developed backend services and data processing logic using Python and Flask.
+\item Built REST APIs to support data ingestion and application workflows.
+\item Applied best practices for \textbf{code quality, data consistency, and maintainability}.
+\item Worked with relational databases and optimized queries for performance.
+\item Gained exposure to cloud-native architectures and GCP-based deployments.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
 \vspace{-6mm}
 
 \vspace{-2mm}
 \section{\textbf{Skills}}
 \vspace{-0.4mm}
- \resumeHeadingSkillStart
-  \resumeSubItem{Programming Languages:}
-    {Java, Python, TypeScript, JavaScript, SQL, C++, Golang, Dart}
-  \resumeSubItem{Backend:}
-  {Spring MVC, REST APIs, Microservices, Kafka, Django,Node.js, Express.js}
-  \resumeSubItem{Frontend:}
-  {Reactjs, Angular, HTML, CSS, Flutter, nextjs,Jest, React Testing Library}
-  \resumeSubItem{Infra/Cloud \& DevOps:}
-    {AWS Cloud, Docker, Kubernetes, Jenkins, git, Linux/Unix, }
-   \resumeSubItem{Core Strengths: }
-    {Distributed Systems, System Design, Accessibility (WCAG), Shell scripting, Debugging,XML, Algorithms,GraphQL,JUnit5, Mockito, JMeter, SOAP,DynamoDB,Elasticsearch}
-  \resumeSubItem{Other Skills:}
-    { Redis, MongoDB, PostgreSQL,Hibernate,JPA,XML,Pytorch, Hugging Face, Tensorflow, }
- \resumeHeadingSkillEnd
+\resumeHeadingSkillStart
+\resumeSubItem{Data Engineering:}
+{ETL Pipelines, Data Ingestion, Data Transformation, Data Validation, Data Quality, Schema Design, Event-Driven Architectures}
+
+\resumeSubItem{Streaming \& Messaging:}
+{Apache Kafka}
+
+\resumeSubItem{Databases \& Storage:}
+{PostgreSQL, DynamoDB, MongoDB; Familiar with Lakehouse concepts (Delta Lake, Apache Iceberg)}
+
+\resumeSubItem{Backend \& APIs:}
+{Java (Spring Boot), Python (Flask), REST APIs, Microservices}
+
+\resumeSubItem{Distributed Systems:}
+{Scalability, Fault Tolerance, Schema Evolution, Service-to-Service Communication}
+
+\resumeSubItem{Workflow \& Orchestration:}
+{Apache Airflow (familiar), Dagster / Prefect (conceptual knowledge)}
+
+\resumeSubItem{Cloud \& DevOps:}
+{AWS, Docker, Kubernetes, CI/CD, Linux/Unix}
+
+\resumeSubItem{Frontend (Working Knowledge):}
+{React, React, HTML, CSS}
+
+\resumeHeadingSkillEnd
 
 \section{\textbf{Projects}}
 \vspace{-0.4mm}
 \resumeSubHeadingListStart
-% \resumeProject
-%   {Project VIT: [A Command-Line Version Control System]}
-%   {Tools: [Python]}
-%   {Jan 2025}
-%   {{}[\href{https://github.com/imaditya123/VIT}{\textcolor{black}{\faGithub}}]}
-% \resumeItemListStart
-%   \item Developed a command-line tool for basic version control operations.
-%   \item Implemented file version tracking and change management using Python.
-%   \item Created a lightweight version control system for essential tasks.
-%   \item Applied Python programming to analyze and manage file versions effectively within the system.
-% \resumeItemListEnd
-% \resumeProject
-%   {Project Tensor Grad: [Lightweight Tensor Class like Autograd]}
-%   {Tools: [Python,Numpy,Graphviz]}
-%   {Dec 2024}
-%   {{}[\href{https://github.com/imaditya123/tensor_grad}{\textcolor{black}{\faGithub}}]}
-% \resumeItemListStart
-%   \item Developed a tensor class like autograd capabilities for simplified gradient computations using NumPy.
-%   \item Implemented reverse-mode automatic differentiation for efficient backpropagation.
-%   \item Created modular components (Neuron, Layer, MLP) to enable customizable neural network architectures.
-%   \item Applied activation functions like tanh, relu, and exp to enhance the flexibility and functionality of neural networks.
-% \resumeItemListEnd
-
 \resumeProject
-  {Global Payment Orchestration}
-  {Tools: [Java | Spring Boot | Kafka | PostgreSQL | Microservices]}
-  {}
-  {{}[\href{https://github.com/imaditya123/global-payment-orchestration}{\textcolor{black}{\faGithub}}]}
+{Global Payment Data Orchestration Platform}
+{Tools: [Java | Spring Boot | Kafka | PostgreSQL | Microservices]}
+{}
+{{}[\href{https://github.com/imaditya123/global-payment-orchestration}{\textcolor{black}{\faGithub}}]}
 \resumeItemListStart
-  \item Designed a distributed system for global payment routing, retries, and failure scenarios across providers
-  \item Implemented services for transaction orchestration, validation, audit logging, and event publishing.
-  \item Demonstrates strong knowledge of distributed systems \& event-driven architecture.
+\item Designed an \textbf{event-driven data orchestration platform} for global payment processing across multiple providers.
+\item Built Kafka-based pipelines for \textbf{transaction ingestion, validation, enrichment, and event publishing}.
+\item Implemented \textbf{audit logging and traceability} to track payment data across services and failure scenarios.
+\item Modeled relational schemas in PostgreSQL optimized for transactional integrity and reporting.
+\item Demonstrates strong expertise in distributed systems, data flow design, and reliability engineering.
 \resumeItemListEnd
-
 \resumeProject
-  {Path-Finding Visualizer}
-  {Tools: [React | Algorithms]}
-  {}
-  {{}[\href{https://github.com/imaditya123/path-finding-visualizer}{\textcolor{black}{\faGithub}}]}
+{Path-Finding Visualizer}
+{Tools: [React | Algorithms]}
+{}
+{{}[\href{https://github.com/imaditya123/path-finding-visualizer}{\textcolor{black}{\faGithub}}]}
 \resumeItemListStart
-  \item Visualized algorithms like Dijkstra, BFS, DFS, graph traversal, and heuristics.
-  \item Implemented interactive grid rendering with animations and algorithm step simulation.
-  \item Highlights strength in algorithms, data structures, and UI architecture.
+\item Implemented visualizations for graph algorithms including Dijkstra, BFS, and DFS.
+\item Demonstrates strong foundations in algorithms and problem-solving.
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
